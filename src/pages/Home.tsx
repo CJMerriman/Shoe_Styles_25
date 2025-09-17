@@ -8,7 +8,13 @@ import React from "react";
 // import Button from "../components/ui/Button";
 // Update the path below to match the actual location of your Button component.
 // Example: If Button.tsx is in src/components, use:
-import Button from "../components/reusableButton/Button";
+// Update the import path below to match the actual location of your Button component.
+// Example: If Button.tsx is in src/components, use:
+import Button from "../components/reuseable/Button";
+// If your Button component is in a different folder, update the path accordingly.
+// Example: import Button from "../components/ui/Button";
+// If your Button component is in a different folder, update the path accordingly.
+// Example: import Button from "../components/ui/Button";
 // If Button.tsx is in src/components/ui, ensure the file exists at that path.
 
 const Home: React.FC = () => {
@@ -35,3 +41,5 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+
+

@@ -1,5 +1,4 @@
 // src/components/Button.tsx
-import React from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary";
@@ -32,11 +31,11 @@ const Button: React.FC<ButtonProps> = ({
   </button>
 );
 
-export default Button;
+// export default Button; // Removed to fix multiple default exports error
 
 // src/pages/Contact.tsx
 import React from "react";
-import Button from "../components/reusableButton/Button";
+// import Button from "../components/reusableButton/Button";
 
 const Contact: React.FC = () => {
   const handleSubmit = () => {
