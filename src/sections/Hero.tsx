@@ -26,11 +26,11 @@ const Hero: React.FC = () => {
           Discover the latest trends in footwear. Shop our exclusive collection and find your perfect pair today!
         </Paragraph>
         <div className="flex gap-4 mt-4">
-          <Button as="a" href="/shop" variant="primary" size="lg" className="shadow-lg">
+          <Button as="a" href="/items" variant="primary" size="lg" className="shadow-lg">
             Shop Now
           </Button>
-          <Button as="a" href="/items" variant="link" size="lg">
-            View Collection
+          <Button as="a" href="/contacts" variant="link" size="lg">
+            Contact US
           </Button>
         </div>
       </div>
