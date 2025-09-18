@@ -1,37 +1,32 @@
 import React from "react";
 
+
 interface ParagraphProps {
     children: React.ReactNode;
     className?: string;
-    size?: 'sm' | 'base' | 'lg';
-    color?: 'gray' | 'blue' | 'red' | 'green';
+    variant?: 'body' | 'small' | 'caption';
+    as?: 'p' | 'span' | 'div';
 }
+
+
+const variantClasses: Record<NonNullable<ParagraphProps['variant']>, string> = {
+    body: 'text-[16px] leading-[1.5] font-normal text-[#1E293B]',
+    small: 'text-[14px] leading-[1.5] font-normal text-[#64748B]',
+    caption: 'text-[12px] leading-[1.5] font-normal text-[#94A3B8]',
+};
 
 const Paragraph: React.FC<ParagraphProps> = ({
     children,
     className = '',
-    size = 'base',
-    color = 'gray'
-})  => {
-
-    const sizeClasses: Record<NonNullable<ParagraphProps['size']>, string> = {
-     sm: 'text-sm',
-     base: 'text-base',
-     lg: 'text-lg'
-    };
-
-   const colorClasses: Record<NonNullable<ParagraphProps['color']>, string> = {
-    gray: 'text-gray-700',
-    blue: 'text-blue-600',
-    red: 'text-red-600',
-    green: 'text-green-600'
-   };
-
-   return (
-    <p className={`${sizeClasses[size]} ${colorClasses[color]} ${className}`}>
-     {children}
-    </p>
-   )
-}
+    variant = 'body',
+    as = 'p',
+}) => {
+    const Tag = as;
+    return React.createElement(
+        Tag,
+        { className: `${variantClasses[variant]} font-inter ${className}`.trim() },
+        children
+    );
+};
 
 export default Paragraph;
