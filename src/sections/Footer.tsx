@@ -1,14 +1,13 @@
 import React from "react";
 import Paragraph from "../components/reuseable/Paragraph";
-
 import Button from "../components/reuseable/Button";
 import { Link } from "react-router-dom";
 
 const links = [
   { label: "Home", href: "/" },
-  { label: "Shop", href: "/shop" },
-  { label: "Contact", href: "/contact" },
-  { label: "About", href: "/about" },
+  { label: "Shop", href: "/Items" },
+  { label: "Contact", href: "/Contacts" },
+  { label: "Cart", href: "/Cart" },
 ];
 
 const Footer: React.FC = () => {
