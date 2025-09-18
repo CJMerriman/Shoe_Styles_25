@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Button from "../reuseable/Button";
 import Heading from "../reuseable/Heading";
 
 const navLinks = [
   { label: "Home", to: "/" },
-  { label: "Items", to: "/items" },
-  { label: "Contact", to: "/contact" },
-  { label: "Cart", to: "/cart" },
+  { label: "Items", to: "/Items" },
+  { label: "Contact", to: "/Contacts" },
+  { label: "Cart", to: "/Cart" },
 ];
 
 const Navigation: React.FC = () => {

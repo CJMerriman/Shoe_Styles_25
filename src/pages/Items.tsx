@@ -3,34 +3,51 @@ import { useCart } from "../context/CartContext";
 
 import Button from "../components/reuseable/Button";
 
+
 const items = [
   {
     name: "Classic Sneakers",
     price: "$79.99",
-    image: "https://via.placeholder.com/300x180?text=Sneakers",
+    images: [
+      "/assets/shoe1-1.avif",
+      "/assets/shoe1-2.avif",
+      "/assets/shoe1-3.avif",
+    ],
     description: "Timeless style and comfort for everyday wear.",
-    colors: ["#0D9488", "#64748B", "#F59E42"],
+    colors: ["#803e09ca", "#64748B", "#353332ff"],
   },
   {
     name: "Running Shoes",
     price: "$99.99",
-    image: "https://via.placeholder.com/300x180?text=Running",
+    images: [
+      "/assets/shoe2-1.avif",
+      "/assets/shoe2-2.avif",
+      "/assets/shoe2-3.avif",
+    ],
     description: "Lightweight and supportive for your daily run.",
-    colors: ["#EF4444", "#3B82F6", "#FBBF24"],
+    colors: ["#f924ceff", "#000000ff", "#fefefcff"],
   },
   {
     name: "High Tops",
     price: "$89.99",
-    image: "https://via.placeholder.com/300x180?text=High+Tops",
+    images: [
+      "/assets/hightop1-1.avif",
+      "/assets/hightop1-2.avif",
+      "/assets/hightop1-3.avif",
+    ],
     description: "Make a statement with these bold high tops.",
-    colors: ["#A21CAF", "#F59E42", "#0EA5E9"],
+    colors: ["#000000ff", "#f43f17ff", "#ffffffff"],
   },
   {
     name: "Sandals",
     price: "$49.99",
-    image: "https://via.placeholder.com/300x180?text=Sandals",
+    images: [
+      "/assets/sandal1-1.webp",
+      "/assets/sandal1-2.avif",
+      "/assets/sandal1-3.jpeg",
+    ],
     description: "Stay cool and comfortable all summer long.",
-    colors: ["#F59E42", "#22C55E", "#64748B"],
+    colors: ["#121110ff", "#ff00ccff", "#886d31ff"],
   },
 ];
 
@@ -55,7 +72,7 @@ const Items: React.FC = () => {
     addToCart({
       name: item.name,
       price: item.price,
-      image: item.image,
+      image: item.images[colorIdx],
       color: item.colors[colorIdx],
     });
     setPopup(`${item.name} (${colorName(item.colors[colorIdx])}) added to cart!`);
@@ -84,7 +101,14 @@ const Items: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {items.map((item, idx) => (
           <div key={idx} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-            <img src={item.image} alt={item.name} className="w-full h-48 object-cover" />
+            <div className="w-full aspect-[4/3] bg-gray-100 overflow-hidden flex items-center justify-center">
+              <img
+                src={item.images[selectedColors[idx]]}
+                alt={item.name}
+                className="w-full h-full object-cover object-center"
+                style={{ maxHeight: '192px' }}
+              />
+            </div>
             <div className="p-4 flex-1 flex flex-col">
               <h2 className="text-xl font-semibold mb-2">{item.name}</h2>
               <p className="text-gray-600 mb-2">{item.description}</p>

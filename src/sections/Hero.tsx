@@ -3,14 +3,14 @@ import React from "react";
 import Heading from "../components/reuseable/Heading";
 import Paragraph from "../components/reuseable/Paragraph";
 import Button from "../components/reuseable/Button";
-import heroBg from "../assets/download.jpg";
+
 
 const Hero: React.FC = () => {
   return (
     <section
       className="relative flex flex-col items-center justify-center min-h-[60vh] w-full text-center px-4 py-16 md:py-32"
       style={{
-        backgroundImage: `url(${heroBg})`,
+        backgroundImage: `url(/assets/download.jpg)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -26,11 +26,11 @@ const Hero: React.FC = () => {
           Discover the latest trends in footwear. Shop our exclusive collection and find your perfect pair today!
         </Paragraph>
         <div className="flex gap-4 mt-4">
-          <Button as="a" href="/items" variant="primary" size="lg" className="shadow-lg">
+          <Button as="a" href="/Items" variant="primary" size="lg" className="shadow-lg">
             Shop Now
           </Button>
-          <Button as="a" href="/contacts" variant="link" size="lg">
-            Contact US
+          <Button as="a" href="/Contacts" variant="link" size="lg">
+            Contact Us
           </Button>
         </div>
       </div>
