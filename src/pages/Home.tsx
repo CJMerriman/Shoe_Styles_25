@@ -1,6 +1,7 @@
 // src/pages/Home.tsx
 import React from "react";
 import Paragraph from "../components/reuseable/Paragraph";
+import Card from "../components/reuseable/Card";
 // Ensure the Button component exists at the correct path.
 // If the file is named Button.tsx or Button.js in src/components, this import is correct.
 // If not, update the path below to match the actual location and filename.
@@ -40,6 +41,7 @@ const Home: React.FC = () => {
         <Paragraph className="flex-center" >test</Paragraph>
       </div>
     </div>
+
   );
 };
 
