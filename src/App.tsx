@@ -1,20 +1,47 @@
 // src/App.tsx
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+
 import Home from "./pages/Home";
-import Contact from "./pages/Contacts";
+import Contacts from "./pages/Contacts";
+import Hero from "./sections/Hero";
+import Features from "./sections/Features";
+import Footer from "./sections/Footer";
+import Items from "./pages/Items";
+import Cart from "./pages/Cart";
+import Navigation from "./components/sections/Navigation";
+import { CartProvider } from "./context/CartContext";
+
 
 function App() {
   return (
-    <Router>
-      <nav className="p-4 flex space-x-4 bg-gray-100 shadow">
-        <Link to="/" className="text-blue-600 hover:underline">Home</Link>
-        <Link to="/contact" className="text-blue-600 hover:underline">Contact</Link>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
+    <CartProvider>
+      <Router>
+        <div className="min-h-screen flex flex-col bg-gray-50">
+          <Navigation />
+          <main className="flex-1 flex flex-col">
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Hero />
+                    <Features />
+                  </>
+                }
+              />
+              <Route path="/home" element={<Home />} />
+              <Route path="/contact" element={<Contacts />} />
+              <Route path="/items" element={<Items />} />
+              <Route path="/cart" element={<Cart />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 
