@@ -16,7 +16,13 @@ const Navigation: React.FC = () => {
     <header className="w-full bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
         <div className="flex items-center gap-2">
-          <Link to="/">
+          <Link to="/" className="flex items-center gap-2">
+            <img
+              src="/assets/logo.jpeg"
+              alt="ShoeStyle Logo"
+              className="logo w-10 h-10 object-contain rounded-full border border-gray-200 shadow-sm"
+              style={{ background: '#fff' }}
+            />
             <Heading level={4} className="text-teal-600 tracking-tight">ShoeStyle</Heading>
           </Link>
         </div>
